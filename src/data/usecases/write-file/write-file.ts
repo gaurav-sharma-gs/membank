@@ -25,6 +25,6 @@ export class WriteFile implements WriteFileUseCase {
     }
 
     await this.fileRepository.writeFile(projectName, fileName, content);
-    return await this.fileRepository.loadFile(projectName, fileName);
+    return content; // Return the content directly instead of reading from disk
   }
 }

@@ -13,7 +13,7 @@ describe("FsFileRepository", () => {
 
   beforeEach(async () => {
     // Create a temporary directory for tests
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "memory-bank-test-"));
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "membank-test-"));
     repository = new FsFileRepository(tempDir);
 
     // Create a test project directory

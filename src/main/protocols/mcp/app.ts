@@ -5,7 +5,7 @@ const router = routes();
 const app = new McpServerAdapter(router);
 
 app.register({
-  name: "memory-bank",
+  name: "membank",
   version: "1.0.0",
 });
 

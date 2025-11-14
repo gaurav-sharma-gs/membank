@@ -1,22 +1,21 @@
 {
-  "name": "@allpepper/memory-bank-mcp",
-  "version": "0.2.1",
+  "name": "membank",
+  "version": "0.3.1",
   "description": "MCP server for remote management of project memory banks",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alioshr/memory-bank-mcp.git"
+    "url": ""
   },
   "keywords": [
     "mcp",
     "memory-bank",
     "project-management",
-    "documentation",
-    "cline"
+    "documentation"
   ],
   "bugs": {
-    "url": "https://github.com/alioshr/memory-bank-mcp/issues"
+    "url": "http://localhost:5173/"
   },
-  "homepage": "https://github.com/alioshr/memory-bank-mcp#readme",
+  "homepage": "",
   "main": "dist/main/index.js",
   "files": [
     "dist"
@@ -25,12 +24,12 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "mcp-server-memory-bank": "dist/main/index.js"
+    "membank": "dist/main/index.js"
   },
   "scripts": {
     "build": "tsc && shx chmod +x dist/**/*.js",
     "prepare": "npm run build",
-    "dev": "ts-node src/main/index.ts",
+    "dev": "node --loader ts-node/esm src/main/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",

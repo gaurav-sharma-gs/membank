@@ -1,3 +1,4 @@
+export * from "./mock-append-file-use-case.js";
 export * from "./mock-list-project-files-use-case.js";
 export * from "./mock-list-projects-use-case.js";
 export * from "./mock-read-file-use-case.js";

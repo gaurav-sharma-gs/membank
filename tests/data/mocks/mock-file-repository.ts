@@ -1,4 +1,4 @@
-import { FileRepository } from "../../../src/data/protocols/file-repository.js";
+import { FileRepository, VersionInfo } from "../../../src/data/protocols/file-repository.js";
 
 export class MockFileRepository implements FileRepository {
   private projectFiles: Record<string, Record<string, string>> = {
@@ -54,5 +54,47 @@ export class MockFileRepository implements FileRepository {
       return content;
     }
     return null;
+  }
+
+  async appendFile(
+    projectName: string,
+    fileName: string,
+    content: string
+  ): Promise<void> {
+    if (!this.projectFiles[projectName]) {
+      this.projectFiles[projectName] = {};
+    }
+    const existingContent = this.projectFiles[projectName][fileName] || "";
+    this.projectFiles[projectName][fileName] = existingContent + content;
+  }
+
+  async logFile(
+    projectName: string,
+    fileName: string,
+    content: string
+ ): Promise<void> {
+    if (!this.projectFiles[projectName]) {
+      this.projectFiles[projectName] = {};
+    }
+    const existingContent = this.projectFiles[projectName][fileName] || "";
+    const timestamp = new Date().toISOString();
+    const logEntry = `\n[${timestamp}] ${content}\n---\n`;
+    this.projectFiles[projectName][fileName] = existingContent + logEntry;
+  }
+
+  async listFileVersions(projectName: string, fileName: string): Promise<VersionInfo[]> {
+    return [];
+  }
+
+  async getFileVersion(projectName: string, fileName: string, versionId: string): Promise<string | null> {
+    return null;
+  }
+
+  async revertFileVersion(projectName: string, fileName: string, versionId: string): Promise<string | null> {
+    return null;
+  }
+
+  async cleanupOldVersions(projectName: string, fileName: string, keepLast?: number): Promise<void> {
+    // Mock implementation
   }
 }

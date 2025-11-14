@@ -30,6 +30,6 @@ export class UpdateFile implements UpdateFileUseCase {
     }
 
     await this.fileRepository.updateFile(projectName, fileName, content);
-    return await this.fileRepository.loadFile(projectName, fileName);
+    return content; // Return the content directly instead of reading from disk
   }
 }
