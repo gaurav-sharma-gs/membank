@@ -1,6 +1,5 @@
 # Membank MCP Server
 
-[![smithery badge](https://smithery.ai/badge/@alioshr/membank)](https://smithery.ai/server/@alioshr/membank)
 [![npm version](https://badge.fury.io/js/membank.svg)](https://www.npmjs.com/package/membank)
 [![npm downloads](https://img.shields.io/npm/dm/membank.svg)](https://www.npmjs.com/package/membank)
 
